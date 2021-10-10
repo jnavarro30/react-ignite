@@ -19,9 +19,9 @@ const currentMonth = getCurrentMonth()
 const currentDay = getCurrentDay()
 const currentDate = `${currentYear}-${currentMonth}-${currentDay}`
 const lastYear = `${currentYear - 1}-${currentMonth}-${currentDay}`
-const nextDate = `${currentYear + 1}-${currentMonth}-${currentDay}`
+const nextYear = `${currentYear + 1}-${currentMonth}-${currentDay}`
 
 // popular games
-const popular_games = `games?dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`
+const popular_games = `games?key=${process.env.REACT_APP_RAWG_API}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`
 
-export const popularGamesURL = () => `${base_url}${popularGamesURL}`
+export const popularGamesURL = () => `${base_url}${popular_games}`
